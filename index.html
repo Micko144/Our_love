@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Our 2nd Monthsary 🌷</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fff5f7;--card:#ffffff;--ink:#9d174d;--text:#374151;--accent:#ec4899;--soft:#fce7f3;--line:#f9a8d4;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1f1020;--card:#2b1530;--ink:#f9a8d4;--text:#e5e7eb;--accent:#f472b6;--soft:#3b1d40;--line:#7e3a6b;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#1f1020;--card:#2b1530;--ink:#f9a8d4;--text:#e5e7eb;--accent:#f472b6;--soft:#3b1d40;--line:#7e3a6b;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:'Lato',sans-serif;line-height:1.8;overflow-x:hidden}
+h1,h2,.serif{font-family:'Playfair Display',Georgia,serif}
+section{max-width:640px;margin:0 auto;padding:56px 20px;text-align:center}
+h2{color:var(--ink);font-size:clamp(24px,6vw,34px);margin-bottom:24px}
+
+/* Intro */
+#intro{position:fixed;inset:0;z-index:50;background:var(--bg);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;cursor:pointer;transition:opacity 1.2s}
+#intro.gone{opacity:0;pointer-events:none}
+#intro p{color:var(--ink);font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:18px}
+.hint{font-size:13px;color:var(--accent);letter-spacing:2px;font-weight:700;animation:pulse 1.6s infinite}
+@keyframes pulse{50%{opacity:.4}}
+.tulip{width:120px;height:200px}
+.bud{transform-origin:60px 90px;transform:scale(.55);transition:transform 1.6s ease}
+.bloom .bud{transform:scale(1.15)}
+.pl{transition:transform 1.6s ease;transform-origin:60px 90px}
+.bloom .pl.a{transform:rotate(-22deg)}.bloom .pl.b{transform:rotate(22deg)}
+
+/* Hero */
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center}
+.hero small{letter-spacing:4px;color:var(--accent);font-weight:700;text-transform:uppercase}
+h1{font-size:clamp(40px,12vw,72px);color:var(--ink);line-height:1.1;margin:12px 0}
+.count{display:flex;gap:12px;justify-content:center;margin-top:20px;flex-wrap:wrap}
+.count div{background:var(--soft);border:1px solid var(--line);border-radius:16px;padding:12px 20px}
+.count b{display:block;font-size:28px;color:var(--ink)}
+
+/* Timeline */
+.tl{border-left:2px solid var(--line);margin-left:12px;text-align:left}
+.tl .item{position:relative;padding:0 0 28px 24px}
+.tl .item::before{content:"🌷";position:absolute;left:-15px;top:-2px;font-size:18px}
+.tl .item b{color:var(--ink)}.tl .item span{display:block;font-size:13px;color:var(--accent);font-weight:700}
+
+/* Reasons */
+.hearts{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:12px}
+.heart{background:var(--soft);border:2px solid var(--line);border-radius:18px;padding:18px 12px;min-height:90px;font-size:14px;color:var(--ink);cursor:pointer;transition:transform .2s;font-family:inherit}
+.heart:hover{transform:translateY(-3px)}
+.heart.open{background:var(--card);font-style:italic}
+
+/* Letter */
+.letter{background:var(--card);border:1px solid var(--line);border-top:6px solid var(--accent);border-radius:20px;padding:32px 24px;text-align:left;box-shadow:0 16px 40px rgba(236,72,153,.12)}
+.letter p{margin-bottom:14px}.sign{text-align:right;color:var(--accent);font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:20px}
+footer{padding:40px 20px;text-align:center;color:var(--ink);font-size:28px}
+
+/* Falling petals */
+.petal{position:fixed;top:-20px;width:10px;height:14px;border-radius:50% 50% 50% 0;opacity:.6;animation:fall linear infinite;pointer-events:none;z-index:1}
+@keyframes fall{to{transform:translateY(110vh) rotate(360deg)}}
+.reveal{opacity:0;transform:translateY(24px);transition:all .9s}
+.reveal.in{opacity:1;transform:none}
+</style>
+</head>
+<body>
+
+<div id="intro" onclick="bloom()">
+  <svg class="tulip" viewBox="0 0 120 200" id="tulip" aria-label="A tulip">
+    <path d="M60 100 V195" stroke="#22c55e" stroke-width="5" stroke-linecap="round" fill="none"/>
+    <path d="M60 170 C30 160 25 135 38 125 C45 145 55 155 60 160Z" fill="#4ade80"/>
+    <g class="bud">
+      <path class="pl a" d="M60 90 C30 85 30 45 60 25 C55 55 58 75 60 90Z" fill="#f472b6"/>
+      <path class="pl b" d="M60 90 C90 85 90 45 60 25 C65 55 62 75 60 90Z" fill="#ec4899"/>
+      <path d="M60 92 C42 80 46 45 60 30 C74 45 78 80 60 92Z" fill="#fb7185"/>
+    </g>
+  </svg>
+  <p>Cyrel, tap the tulip…</p>
+  <div class="hint">🌷 TAP TO BLOOM 🌷</div>
+</div>
+
+<main>
+  <section class="hero reveal">
+    <small>Happy 2nd Monthsary</small>
+    <h1>Cyrel &amp; Me</h1>
+    <p class="serif" style="font-style:italic;color:var(--ink)">Two months down, and my favorite days are still the ones with you.</p>
+    <div class="count">
+      <div><b>2</b>months</div>
+      <div id="daysBox" hidden><b id="days">0</b>days together</div>
+    </div>
+  </section>
+
+  <section class="reveal">
+    <h2>Our little story</h2>
+    <div class="tl">
+      <div class="item"><span>June 1, 2026</span><b>The day I started courting you</b><br>Where it all began.</div>
+      <div class="item"><span>September 1, 2026</span><b>The day we became official</b><br>I haven’t stopped smiling since.</div>
+      <div class="item"><span>November 1, 2026</span><b>Our 2nd monthsary</b><br>Two months of us, even miles apart.</div>
+      <div class="item"><span>Someday soon</span><b>The day we finally meet</b><br>I can’t wait to see you in person.</div>
+    </div>
+  </section>
+
+  <section class="reveal">
+    <h2>Reasons I love you</h2>
+    <p style="margin-bottom:16px">Tap each heart 💕</p>
+    <div class="hearts" id="hearts"></div>
+  </section>
+
+  <section class="reveal">
+    <h2>A letter for you</h2>
+    <div class="letter">
+      <p class="serif" style="font-size:22px;color:var(--ink);font-style:italic">Dear Cyrel,</p>
+      <p>Two months with you, and I still can’t pick a favorite moment, because every moment is worth replaying.</p>
+      <p>Every time you call me “langga,” my whole day gets softer. It’s such a small word, but it makes me feel like I’m exactly where I’m meant to be.</p>
+      <p>My wish for us is simple: that we always stay true to each other and never give up on our love, even on the hard days. I’m so happy it’s you.</p>
+      <div class="sign">Happy 2nd monthsary, my love. 🌷<br>Jonel</div>
+    </div>
+  </section>
+  <footer>🌷🌷🌷</footer>
+</main>
+
+<script>
+// Set your real monthsary start date here, e.g. "2026-09-01". Leave empty to hide the day counter.
+const START_DATE = "2026-09-01";
+const REASONS = ["You shower me with compliments.","You’re so gentle with me.","When you smile, you look so beautiful.","I feel complete when I’m talking with you.","You taught me how to be true.","You keep yapping just to pull me out of a bad mood."];
+
+function bloom(){
+  const intro=document.getElementById('intro');
+  document.getElementById('tulip').classList.add('bloom');
+  intro.onclick=null;
+  setTimeout(()=>intro.classList.add('gone'),2000);
+  setTimeout(()=>{intro.style.display='none';observe()},3200);
+}
+const hearts=document.getElementById('hearts');
+REASONS.forEach(r=>{
+  const b=document.createElement('button');
+  b.className='heart';b.textContent='💗';
+  b.onclick=()=>{b.classList.toggle('open');b.textContent=b.classList.contains('open')?r:'💗'};
+  hearts.appendChild(b);
+});
+if(START_DATE){
+  const d=Math.max(0,Math.floor((Date.now()-new Date(START_DATE))/864e5));
+  document.getElementById('days').textContent=d;
+  document.getElementById('daysBox').hidden=false;
+}
+function observe(){
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')}),{threshold:.15});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+}
+const cols=['#f9a8d4','#f0abfc','#fda4af','#c084fc'];
+for(let i=0;i<22;i++){
+  const p=document.createElement('div');p.className='petal';
+  p.style.cssText=`left:${Math.random()*100}%;background:${cols[i%4]};animation-duration:${9+Math.random()*9}s;animation-delay:${-Math.random()*12}s`;
+  document.body.appendChild(p);
+}
+</script>
+</body>
+</html>
